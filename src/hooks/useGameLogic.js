@@ -25,7 +25,6 @@ const useGameLogic = ({ openModal }) => {
 
     const onIncorrectGuess = async () => {
         const guessLocation = await fetchLocationFromSuburb(guess);
-        console.log(guessLocation)
         if (guessLocation.length === 0) {
             setScoreIndicator(scoreIndicator + GUESS_THRESHOLDS[9999999]);
         } 
@@ -54,7 +53,6 @@ const useGameLogic = ({ openModal }) => {
 
     const validateAnswer = async () => {
         const answer = await fetchLocationData(position[0], position[1]);
-        console.log(answer);
         if (guess.length === 0) {
             skipGuess()
         }
