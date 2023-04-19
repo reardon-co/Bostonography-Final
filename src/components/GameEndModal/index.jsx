@@ -5,7 +5,7 @@ export const GameEndModal = ({ isOpen, onClose, gameWon, positionAddress, scoreI
   if (positionAddress) {
     if (gameWon) {
       return (
-        <Modal isOpen={isOpen} onClose={onClose}>
+        <Modal isOpen={isOpen} onClose={onClose} closeOnOverlayClick={false}>
           <ModalOverlay />
           <ModalContent>
             <ModalHeader>Game Won!</ModalHeader>
@@ -25,7 +25,7 @@ export const GameEndModal = ({ isOpen, onClose, gameWon, positionAddress, scoreI
       );
     } else {
       return (
-        <Modal isOpen={isOpen} onClose={onClose}>
+        <Modal isOpen={isOpen} onClose={onClose} closeOnOverlayClick={false}>
           <ModalOverlay />
           <ModalContent>
             <ModalHeader>Game Over</ModalHeader>
