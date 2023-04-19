@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { GUESS_THRESHOLDS, MAP_BOUNDS, MAX_ZOOM, MIN_ZOOM } from "../constants/mapConstants"
+import { GUESS_THRESHOLDS, MAX_ZOOM, MIN_ZOOM } from "../constants/mapConstants"
 import { fetchLocationData, fetchLocationFromSuburb, haversineDistance, pickRandomCoordinates } from "../utils/fetchLocation"
 
 

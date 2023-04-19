@@ -1,22 +1,7 @@
-import {
-  Button,
-  Flex,
-  HStack,
-  Heading,
-  Input,
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalOverlay,
-  Text,
-  useDisclosure,
-} from '@chakra-ui/react';
+import { Button, Heading, Input, Text, useDisclosure } from '@chakra-ui/react';
 import MapComponent from '../MapComponent';
 import classes from './index.module.css';
-import { useState } from 'react';
-import { fetchLocationData, fetchLocationFromSuburb, haversineDistance } from '../../utils/fetchLocation';
 import useGameLogic from '../../hooks/useGameLogic';
-import { GUESS_THRESHOLDS } from '../../constants/mapConstants';
 import { GameEndModal } from '../GameEndModal';
 
 const MainPage = () => {

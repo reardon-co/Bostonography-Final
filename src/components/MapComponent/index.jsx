@@ -1,4 +1,4 @@
-import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvent } from 'react-leaflet';
+import { MapContainer, Marker, TileLayer, useMap } from 'react-leaflet';
 import classes from './MapComponent.module.css';
 import { MAP_BOUNDS, MAX_ZOOM, MIN_ZOOM } from '../../constants/mapConstants';
 import L from 'leaflet';
