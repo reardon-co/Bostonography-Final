@@ -1,11 +1,14 @@
-import { Button, Heading, Input, Text, useDisclosure } from '@chakra-ui/react';
+import { Button, Heading, IconButton, Input, Text, useDisclosure } from '@chakra-ui/react';
 import MapComponent from '../MapComponent';
 import classes from './index.module.css';
 import useGameLogic from '../../hooks/useGameLogic';
 import { GameEndModal } from '../GameEndModal';
+import { QuestionIcon } from '@chakra-ui/icons';
+import { HelpModal } from '../HelpModal';
 
 const MainPage = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen: isHelpOpen, onOpen: onHelpOpen, onClose: onHelpClose } = useDisclosure();
   const [{ position, positionData, zoomLevel, scoreIndicator, gameWon }, { setGuess, validateAnswer, skipGuess }] =
     useGameLogic({
       openModal: onOpen,
@@ -29,6 +32,8 @@ const MainPage = () => {
       <MapComponent zoomLevel={zoomLevel} position={position} />
       <div className={classes.gridItem}>
         <div className={classes.userInputs}>
+          <IconButton aria-label="tutorial" onClick={onHelpOpen} icon={<QuestionIcon />} />
+          <HelpModal onClose={onHelpClose} isOpen={isHelpOpen} />
           <Input
             className={classes.growItem}
             placeholder="What borough are we in?"
